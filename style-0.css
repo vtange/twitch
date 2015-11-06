@@ -3,27 +3,36 @@ body {
   text-align:center;
   background:#F79F94;
 }
-.channels /* the whole thing*/ {
+.twitchThing /* the whole thing*/ {
   position:relative;
   border:1px solid #F47564;
-  margin: 0px auto;
   width: 300px;
   margin:auto;
 }
+.menu-container{
+  position:relative;
+  height:57px;
+  background-color:#F47564;
+}
+.menu{
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  overflow:hidden;
+}
+
 .menu li{
-  font-size:1.5em;
+  font-size:1.1em;
+  color:white;
   display:inline-block;
   padding: 15px 0px 16px 0px;
-  width:34%;
-  background-color:#F47564;
-  margin:-3px;
+  width:33%;
   cursor:pointer;
 }
 .menu li:nth-child(n+2){
-  border-left:1px solid white;
+  border-left:1px solid #FABCB3;
 }
-.channellist li{
-  font-size:1.5em;
+.whitespace{
   background-color:#FFF;
-  margin:auto;
 }
