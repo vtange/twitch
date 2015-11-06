@@ -30,9 +30,26 @@ body {
   width:33%;
   cursor:pointer;
 }
+
+
 .menu li:nth-child(n+2){
   border-left:1px solid #FABCB3;
 }
 .whitespace{
   background-color:#FFF;
+    min-height: 100px;
+}
+.search-area{
+    position:relative;
+    width:auto;
+    height: 67px;
+    border-bottom: 1px solid #FABCB3;
+}
+
+.search-bar{
+    width:87%;
+    margin:6%;
+    border-radius:15px;
+    border:1px solid #FFCCCC;
+    padding:4px;
 }
