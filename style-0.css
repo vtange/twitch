@@ -1,0 +1,29 @@
+body {
+  margin-top: 40px;
+  text-align:center;
+  background:#F79F94;
+}
+.channels /* the whole thing*/ {
+  position:relative;
+  border:1px solid #F47564;
+  margin: 0px auto;
+  width: 300px;
+  margin:auto;
+}
+.menu li{
+  font-size:1.5em;
+  display:inline-block;
+  padding: 15px 0px 16px 0px;
+  width:34%;
+  background-color:#F47564;
+  margin:-3px;
+  cursor:pointer;
+}
+.menu li:nth-child(n+2){
+  border-left:1px solid white;
+}
+.channellist li{
+  font-size:1.5em;
+  background-color:#FFF;
+  margin:auto;
+}
