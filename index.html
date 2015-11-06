@@ -4,11 +4,11 @@
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="style-0.css"/>
     <script src="jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </head>
-<body>
-    <article class="twitchThing">
+<body data-ng-app="ChannelSearcher">
+    <article class="twitchThing" data-ng-controller="MainCtrl as searcher">
       <div class="menu-container">
           <div class="menu">
             <li>All</li><li>Online</li><li>Offline</li>
@@ -16,10 +16,10 @@
       </div>
       <div class="whitespace">
           <div class="search-area">
-                  <input class="search-bar" type="text" name="" value="" data-ng-model=""/>
+                  <input class="search-bar" type="text" name="" value="" data-ng-model="sera"/>
           </div>
           <div class="channellist">
-            <a><li><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Red_flag.svg/800px-Red_flag.svg.png"/><span class="username">FreeCodeCamp</span><span class="onOff">&nbsp;<i class="fa fa-exclamation"></i></span></li></a>
+            <a data-ng-click="print()"><li><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Red_flag.svg/800px-Red_flag.svg.png"/><span class="username">FreeCodeCamp</span><span class="onOff">&nbsp;<i class="fa fa-exclamation"></i></span></li></a>
             <a><li><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Red_flag.svg/800px-Red_flag.svg.png"/><span class="username">FreeCodeCamp</span><span class="onOff">&nbsp;<i class="fa fa-exclamation"></i></span></li></a>
           </div>
       </div>
