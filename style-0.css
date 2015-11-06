@@ -1,4 +1,5 @@
 body {
+  font-family: "Open Sans";
   margin-top: 40px;
   text-align:center;
   background:#F79F94;
@@ -52,4 +53,30 @@ body {
     border-radius:15px;
     border:1px solid #FFCCCC;
     padding:4px;
+}
+.channellist{
+    padding:10px;   
+}
+
+.channellist li{
+    text-align: left;  
+    display:block;
+    color: #F47564;
+    padding:10px;
+}
+.avatar{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+}
+.username {
+    position: absolute;
+    line-height: 50px;
+    padding-left: 10px;
+}
+.onOff {
+    position: absolute;
+    right:20;
+    line-height: 50px;
+    display: inline-block;
 }
