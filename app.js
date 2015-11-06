@@ -8,9 +8,9 @@ app.factory('memory', function($http){
 
   storage.the_good_stuff = {};
 
-    var url = "https://api.twitch.tv/kraken/streams?channel=freecodecamp&callback=JSON_CALLBACK";
+    var url = "https://api.twitch.tv/kraken/streams/freecodecamp.json";
     $http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-    $http.jsonp(url).success(function(data) {
+    $http.jsonp(url + "?callback=JSON_CALLBACK").success(function(data) {
        storage.the_good_stuff = data;
     }).error(function(data) {
        storage.the_good_stuff = {};
@@ -22,7 +22,7 @@ app.factory('memory', function($http){
 app.controller('MainCtrl', ['$scope', 'memory', function($scope, memory){
     $scope.storage = memory; // load service
     $scope.print = function(){
-        console.log($scope.sera)   
+        console.log($scope.storage.the_good_stuff)
     }
     
 }]);//end of controller
