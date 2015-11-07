@@ -61,7 +61,14 @@ app.controller('MainCtrl', ['$scope', 'memory', function($scope, memory){
          return true;
         };
     }
-
+      //tabs
+      $scope.Tab = 1;
+      $scope.changeTab = function(tgtTab){
+          $scope.tab = tgtTab;
+      };
+      $scope.checkTab = function(tab){
+          return $scope.Tab === tab;
+      };
 }]);//end of controller
   //end of function
 })();
