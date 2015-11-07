@@ -18,7 +18,7 @@
                   <span><i class="search-icon fa fa-search"></i></span><input class="search-bar" type="text" name="" value="" data-ng-model="sera"/>
           </div>
           <div class="channellist">
-            <a data-ng-click="print()" data-ng-repeat="user in storage.profileInfos"><li><img class="avatar" data-ng-src="{{user.logo}}"/><span class="username">{{user.display_name}}</span><span class="onOff">&nbsp;<i class="fa fa-exclamation"></i></span></li></a>
+            <a data-ng-click="print()" data-ng-repeat="user in storage.combinedUsers"><li><img class="avatar" data-ng-src="{{user.logo}}"/><span class="username">{{user.display_name}}</span><span class="onOff">&nbsp;<i class="fa fa-exclamation"></i></span></li></a>
           </div>
       </div>
     </article>
