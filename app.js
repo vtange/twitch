@@ -6,7 +6,8 @@ app.factory('memory', function($http){
 
   var baseUrl = "https://api.twitch.tv/kraken/";
 
-  var users = ["freecodecamp","tentuzero","watchgintama","lordstormakov", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff"];
+  var users = ["freecodecamp","tentuzero","watchgintama","lordstormakov", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", "brunofin",
+"comster404" ];
 
   var storage = {};
   storage.combinedUsers = [];
