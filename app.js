@@ -38,7 +38,7 @@ app.factory('memory', function($http){
 app.controller('MainCtrl', ['$scope', 'memory', function($scope, memory){
     $scope.storage = memory; // load service
     $scope.print = function(){
-        console.log($scope.storage.profileInfos)
+        console.log($scope.storage.profileInfos);
     }
 
 }]);//end of controller

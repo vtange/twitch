@@ -18,8 +18,7 @@
                   <span><i class="search-icon fa fa-search"></i></span><input class="search-bar" type="text" name="" value="" data-ng-model="sera"/>
           </div>
           <div class="channellist">
-            <a data-ng-click="print()"><li><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Red_flag.svg/800px-Red_flag.svg.png"/><span class="username">FreeCodeCamp</span><span class="onOff">&nbsp;<i class="fa fa-exclamation"></i></span></li></a>
-            <a><li><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Red_flag.svg/800px-Red_flag.svg.png"/><span class="username">FreeCodeCamp</span><span class="onOff">&nbsp;<i class="fa fa-exclamation"></i></span></li></a>
+            <a data-ng-click="print()" data-ng-repeat="user in storage.profileInfos"><li><img class="avatar" data-ng-src="{{user.logo}}"/><span class="username">{{user.display_name}}</span><span class="onOff">&nbsp;<i class="fa fa-exclamation"></i></span></li></a>
           </div>
       </div>
     </article>
