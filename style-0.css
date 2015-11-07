@@ -31,7 +31,9 @@ body {
   width:33%;
   cursor:pointer;
 }
-
+.menu li:active{
+  background-color:coral;
+}
 
 .menu li:nth-child(n+2){
   border-left:1px solid #FABCB3;

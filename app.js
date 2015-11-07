@@ -1,6 +1,6 @@
 (function() {
     //start of function
-  var app = angular.module('ChannelSearcher', []);
+  var app = angular.module('ChannelSearcher', ['filters']);
 
 app.factory('memory', function($http){
 
@@ -64,7 +64,8 @@ app.controller('MainCtrl', ['$scope', 'memory', function($scope, memory){
       //tabs
       $scope.Tab = 1;
       $scope.changeTab = function(tgtTab){
-          $scope.tab = tgtTab;
+          $scope.Tab = tgtTab;
+          console.log("now on tab" + tgtTab)
       };
       $scope.checkTab = function(tab){
           return $scope.Tab === tab;

@@ -2,15 +2,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style-0.css"/>
-    <script src="jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="filters.js"></script>
 </head>
 <body data-ng-app="ChannelSearcher">
     <article class="twitchThing" data-ng-controller="MainCtrl as searcher">
       <div class="menu-container">
           <div class="menu">
-            <li data-ng-click="changeTab(1)">All</li><li data-ng-click="changeTab(2)">Online</li><li data-ng-click="changeTab(3)">Offline</li>
+            <li data-ng-click="changeTab(1)" data-ng-class="{ active: checkTab(1)}">All</li><li data-ng-click="changeTab(2)" data-ng-class="{ active: checkTab(2)}">Online</li><li data-ng-click="changeTab(3)" data-ng-class="{ active: checkTab(3)}">Offline</li>
           </div>
       </div>
       <div class="whitespace">
@@ -19,8 +19,8 @@
           </div>
           <div class="channellist">
             <a data-ng-if="checkTab(1)" data-ng-href="{{baseTwitchURL + user.name}}" data-ng-click="print()" data-ng-repeat="user in storage.combinedUsers"><li><img class="avatar" data-ng-if="!checkLogo(user)" src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/twitch-2048-black.png"/><img class="avatar" data-ng-if="checkLogo(user)" data-ng-src="{{user.logo}}"/><span data-ng-if="checkOnline(user)" class="playing">{{user.stream.game}}</span><span class="username">{{user.display_name}}</span><span class="onOff">&nbsp;<i data-ng-if="checkOnline(user)" class="fa fa-video-camera"></i><i data-ng-if="!checkOnline(user)" class="fa fa-times-circle"></i></span></li></a>
-            <a data-ng-if="checkTab(2)" data-ng-href="{{baseTwitchURL + user.name}}" data-ng-click="print()" data-ng-repeat="user in storage.combinedUsers"><li><img class="avatar" data-ng-if="!checkLogo(user)" src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/twitch-2048-black.png"/><img class="avatar" data-ng-if="checkLogo(user)" data-ng-src="{{user.logo}}"/><span data-ng-if="checkOnline(user)" class="playing">{{user.stream.game}}</span><span class="username">{{user.display_name}}</span><span class="onOff">&nbsp;<i data-ng-if="checkOnline(user)" class="fa fa-video-camera"></i><i data-ng-if="!checkOnline(user)" class="fa fa-times-circle"></i></span></li></a>
-            <a data-ng-if="checkTab(3)" data-ng-href="{{baseTwitchURL + user.name}}" data-ng-click="print()" data-ng-repeat="user in storage.combinedUsers"><li><img class="avatar" data-ng-if="!checkLogo(user)" src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/twitch-2048-black.png"/><img class="avatar" data-ng-if="checkLogo(user)" data-ng-src="{{user.logo}}"/><span data-ng-if="checkOnline(user)" class="playing">{{user.stream.game}}</span><span class="username">{{user.display_name}}</span><span class="onOff">&nbsp;<i data-ng-if="checkOnline(user)" class="fa fa-video-camera"></i><i data-ng-if="!checkOnline(user)" class="fa fa-times-circle"></i></span></li></a>
+            <a data-ng-if="checkTab(2)" data-ng-href="{{baseTwitchURL + user.name}}" data-ng-click="print()" data-ng-repeat="user in storage.combinedUsers | online"><li><img class="avatar" data-ng-if="!checkLogo(user)" src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/twitch-2048-black.png"/><img class="avatar" data-ng-if="checkLogo(user)" data-ng-src="{{user.logo}}"/><span data-ng-if="checkOnline(user)" class="playing">{{user.stream.game}}</span><span class="username">{{user.display_name}}</span><span class="onOff">&nbsp;<i class="fa fa-video-camera"></i></span></li></a>
+            <a data-ng-if="checkTab(3)" data-ng-href="{{baseTwitchURL + user.name}}" data-ng-click="print()" data-ng-repeat="user in storage.combinedUsers | offline"><li><img class="avatar" data-ng-if="!checkLogo(user)" src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/twitch-2048-black.png"/><img class="avatar" data-ng-if="checkLogo(user)" data-ng-src="{{user.logo}}"/><span data-ng-if="checkOnline(user)" class="playing">{{user.stream.game}}</span><span class="username">{{user.display_name}}</span><span class="onOff">&nbsp;<i class="fa fa-times-circle"></i></span></li></a>
           </div>
       </div>
     </article>
