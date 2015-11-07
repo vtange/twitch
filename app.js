@@ -27,11 +27,11 @@ function extend(obj, src) {
         $http.jsonp(baseUrl + profileExt + users[i] + "?callback=JSON_CALLBACK").success(function(data1) {
             $http.jsonp(baseUrl + statusExt + data1.name + "?callback=JSON_CALLBACK").success(function(data2) {
                storage.combinedUsers.push(extend(data1,data2));
-            }).error(function(data) {
+            }).error(function(data2) {
                storage.combinedUsers = [];
                console.log("error1");
             });
-        }).error(function(data) {
+        }).error(function(data1) {
            storage.combinedUsers = [];
            console.log("error0");
         });
