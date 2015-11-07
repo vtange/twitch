@@ -41,10 +41,22 @@ function extend(obj, src) {
 
 app.controller('MainCtrl', ['$scope', 'memory', function($scope, memory){
     $scope.storage = memory; // load service
+    $scope.baseTwitchURL = "http://www.twitch.tv/";
     $scope.print = function(){
         console.log($scope.storage.combinedUsers);
     }
+    $scope.checkOnline = function(user){
+        if (user.stream == null) {
+            return false;   
+        }
+        else {
+         return true;   
+        };
+    }
 
+    
+    
+    
 }]);//end of controller
   //end of function
 })();
