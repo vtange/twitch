@@ -24,7 +24,7 @@ function extend(obj, src) {
 
         $http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
         $http.jsonp(baseUrl + profileExt + users[i] + "?callback=JSON_CALLBACK").success(function(data1) {
-            $http.jsonp(baseUrl + statusExt + users[i] + "?callback=JSON_CALLBACK").success(function(data2) {
+            $http.jsonp(baseUrl + statusExt + data1.name + "?callback=JSON_CALLBACK").success(function(data2) {
                storage.combinedUsers.push(extend(data1,data2));
             }).error(function(data) {
                storage.combinedUsers = [];
