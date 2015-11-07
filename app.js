@@ -47,16 +47,21 @@ app.controller('MainCtrl', ['$scope', 'memory', function($scope, memory){
     }
     $scope.checkOnline = function(user){
         if (user.stream == null) {
-            return false;   
+            return false;
         }
         else {
-         return true;   
+         return true;
+        };
+    }
+    $scope.checkLogo = function(user){
+        if (user.logo == null) {
+            return false;
+        }
+        else {
+         return true;
         };
     }
 
-    
-    
-    
 }]);//end of controller
   //end of function
 })();
