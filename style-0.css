@@ -64,9 +64,9 @@ body {
 }
 
 .channellist li{
+    position: relative;
     text-align: left;  
     display:block;
-    color: #F47564;
     padding:10px;
     cursor: pointer;
 }
@@ -75,14 +75,21 @@ body {
     height:50px;
     border-radius: 50%;
 }
+.playing {
+    position: absolute;
+    padding-left: 10px;
+    bottom:12px;
+}
 .username {
     position: absolute;
-    line-height: 50px;
     padding-left: 10px;
+    line-height: 50px;
+    color: #F47564;
 }
 .onOff {
     position: absolute;
     right:20;
     line-height: 50px;
+    color: #F47564;
     display: inline-block;
 }
