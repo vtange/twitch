@@ -11,7 +11,7 @@ app.factory('memory', function($http){
 
   var storage = {};
   storage.combinedUsers = [];
-
+//courtesy https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/
 function extend(obj, src) {
     for (var key in src) {
         if (src.hasOwnProperty(key)) obj[key] = src[key];
@@ -24,15 +24,15 @@ function extend(obj, src) {
        var statusExt = "streams/";
 
         $http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-        $http.jsonp(baseUrl + profileExt + users[i] + "?callback=JSON_CALLBACK").success(function(data1) {
-            $http.jsonp(baseUrl + statusExt + data1.name + "?callback=JSON_CALLBACK").success(function(data2) {
-               storage.combinedUsers.push(extend(data1,data2));
+        $http.jsonp(baseUrl + profileExt + users[i] + "?callback=JSON_CALLBACK").success(function(data1) {//pull profile info
+            $http.jsonp(baseUrl + statusExt + data1.name + "?callback=JSON_CALLBACK").success(function(data2) {//then pull status info
+               storage.combinedUsers.push(extend(data1,data2));                                                     //then merge them all together
             }).error(function(data2) {
-               storage.combinedUsers = [];
+               storage.combinedUsers = [];//error = no data anyways
                console.log("error1");
             });
         }).error(function(data1) {
-           storage.combinedUsers = [];
+           storage.combinedUsers = [];//error = no data anyways
            console.log("error0");
         });
     }//end info pulling
@@ -42,26 +42,10 @@ function extend(obj, src) {
 
 app.controller('MainCtrl', ['$scope', 'memory', function($scope, memory){
     $scope.storage = memory; // load service
-    $scope.baseTwitchURL = "http://www.twitch.tv/";
-    $scope.print = function(){
+    $scope.baseTwitchURL = "http://www.twitch.tv/";//use for links
+    /*$scope.print = function(){
         console.log($scope.storage.combinedUsers);
-    }
-    $scope.checkOnline = function(user){
-        if (user.stream == null) {
-            return false;
-        }
-        else {
-         return true;
-        };
-    }
-    $scope.checkLogo = function(user){
-        if (user.logo == null) {
-            return false;
-        }
-        else {
-         return true;
-        };
-    }
+    }*///for debug use, to find user info
       //tabs
       $scope.Tab = 1;
       $scope.changeTab = function(tgtTab){
