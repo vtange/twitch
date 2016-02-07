@@ -2,6 +2,7 @@
 
 # Takeaways
 
+ - CSS -> Tabs within Boundaries
  - CSS -> Line Height and floats for ```[Avatar] Username     [status]```
 
 
