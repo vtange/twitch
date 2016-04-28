@@ -1,21 +1,51 @@
+![alt tag](http://res.cloudinary.com/dmj8qtant/image/upload/c_limit,w_600/v1461879977/twitch_j5ejlc.png)
 # twitch
 
-# Takeaways
+## Tech
+AngularJS + filtering
 
- - CSS -> Tabs within Boundaries
- - CSS -> Line Height and floats for ```[Avatar] Username     [status]```
+## Niceties
+Merge data from 2 APIs, Real-time Name search filter
 
-
- - filtering upon ng-repeat
- 
+### Details
+#### CSS
+ - Tabs within Boundaries ``` [ All | Online | Offline ] ```
+ - Line Height and floats for ```[Avatar] Username     [status]```
+```
+.avatar{
+    width:50px;
+    >height:50px;
+    border-radius: 50%;
+}
+.playing {
+    position: absolute;
+    padding-left: 10px;
+    bottom:12px;
+}
+.username {
+    position: absolute;
+    padding-left: 10px;
+    >line-height: 50px;
+    color: #F47564;
+}
+.onOff {
+    position: absolute;
+    right:20;
+    >line-height: 50px;
+    color: #F47564;
+    display: inline-block;
+}
+```
+#### JS
+- 'sera' = ng-model for name search.
  ```
- data-ng-repeat="user in storage.combinedUsers | filter:sera" -> 'sera' = ng-model for name search.
+ data-ng-repeat="user in storage.combinedUsers | filter:sera"
  ```
  ```
  data-ng-repeat="user in offlineUsers = (storage.combinedUsers | offline)
  ```
  
-- 2x API Search for User info and User Status. -> merged "User info" and "User status" via 'extend' function.
+- Merge 2 API Search results for User info and User Status. via 'extend' function.
   
   ```
   //courtesy https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/
